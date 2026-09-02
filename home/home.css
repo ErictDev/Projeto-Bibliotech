@@ -1,0 +1,303 @@
+
+
+/* CABEÇALHO */
+
+a {
+    color: var(--branco);
+    text-decoration: none; /* tira o sublinhado do link */
+}
+
+.cabecalho {
+    background-color: var(--azul-escuro);
+
+    display: flex;
+    /* flex-direction: row; */
+
+    /* alinha no sentido do flex */
+    justify-content: space-between;
+
+    /* alinha no sentido contrário do flex */
+    align-items: center;
+
+    padding: 0 120px;
+
+    height: 10vh; /* 10% da visualização vertical do dispositivo */
+}
+
+.navegacao {
+    display: flex;
+    align-items: center;
+
+    gap: 50px;
+}
+
+.navegacao a {
+    text-transform: uppercase;
+    font-size: 1em; /* equivale a 16px */  
+    font-weight: 500;
+}
+
+/* Conteúdo principal */
+
+/* Primeiro banner */
+.banner-principal {
+    color: var(--branco);
+
+    height: 70vh;
+
+    background-image: url(../imgs/banner-principal-home.png);
+    background-size: cover;
+
+    /* overflow: hidden;  evita que os elementos transbordem */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 120px;
+}
+
+.texto-banner {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 50px;
+}
+
+.texto-banner p {
+    font-size: 1.5em;
+    width: 60%;
+}
+
+.botao {
+    padding: 20px 50px;
+
+    border-radius: 10px;
+
+    background-color: var(--cor-destaque);
+    color: var(--azul-escuro);
+
+    font-size: 1.2em;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.botao:hover {
+    background-color: #2ab2ab;
+    color: var(--branco);
+    cursor: pointer;
+}
+
+.banner-principal img {
+    align-self: flex-end;
+    width: 35%;
+}
+
+/* Título das seções */
+
+.titulo-secao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-secao h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.titulo-secao span {
+    display: flex;
+    width: 250px;
+    background-color: var(--cor-destaque);
+    height: 4px;
+     
+}
+
+/* Seção beneficios */
+
+.beneficios {
+    padding: 50px 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.beneficios-lista {
+    display: grid;
+    grid-template-columns: repeat(3, 20%);
+    gap: 10%;
+    justify-content: center;
+}
+
+.beneficio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px 50px;  /* cima -> direita e esquerda -> baixo */
+    border: 1px solid var(--azul-escuro);
+    border-radius: 30px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25); /* x -> y -> blur -> cor transparente*/
+
+    text-align: center;
+
+    /*  Cria referencia de posicionamento para o icone, quando o icone for posicionado usa esse card como referencia */
+    /* Sem isso, o circulo poderia usar outro elemento da pagina como referencia e sair passeando pelo layout */
+    position: relative;
+}
+
+.beneficio-icone img {
+    width: 50%;
+
+}
+
+.beneficio-icone {
+    position: absolute;
+    border: 4px solid var(--cor-destaque);
+    border-radius: 50%;
+
+    width: 30%;
+    height: 30%;
+
+    /* Retira o cione do fluxo normal, com o absolute ele pode ficar por cima do card */
+
+    /* Move o circulo para cima, o valor negativo faz ele sair parcialmente do card */
+    top: -15%;
+
+    /* Coloca o comeco do elemento em 50% da largura do card */
+    left: 50%;
+
+    /* Ajustamos o posicionamento do elemento, mas a borda esquerda do circulo fica no centro, nâo o circulo inteiro, por isso usamos o transform: translateX(-50%); que move o próprio ciruclo pra esquerda em 50% da largura dele, fazendo com que o circulo fique perfeitamente centralizado*/
+    transform: translateX(-50%);
+
+    display: grid;
+    place-items: center;
+
+    /* place-items: center; é a mesma coisa que colocar align-itens: center; e justify-itens: center; */
+
+}
+
+.beneficio h3 {
+    font-size: 1,2em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    width: 90%;
+}
+
+.beneficio p {
+    font-size: 1em;
+    width: 80%;
+}
+
+.banner-meio {
+    height: 60vh;
+    background-image: url(../imgs/Banner\ centro.svg);
+
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 120px;
+    color: var(--branco);
+    margin-bottom: 60px
+}
+
+
+
+/* Top livros recomendados */
+
+.banner-livros {
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 0 300px;
+    color: var(--branco);
+}
+
+.livros {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner-livros h3 {
+     font-size: 1em;
+    width: 60%;
+    color: #000000;
+    text-align: center;
+    margin: 20px 0 20px 0;
+    
+}
+
+.banner-livros h4 {
+     font-size: 1em;
+    width: 60%;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 3px
+}
+
+.banner-livros p {
+     font-size: 1em;
+    color: #000000;
+    text-align: center;
+}
+
+
+
+.titulo-livros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-livros h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.titulo-livros span {
+    display: flex;
+    width: 250px;
+    background-color: var(--cor-destaque);
+    height: 4px;
+     margin-bottom: 20px
+}
+
+
+.livros-icones img {
+    height: 300px;
+}
+
+.container {
+    background-color: var(--azul-escuro);
+    width: 2000px;
+    height: 400px;
+}
+
+.texto-cima h4 {
+    color: #ffffff;
+}
+
+.texto-cima span {
+      display: flex;
+    width: 1700px;
+    background-color: #ffffff;
+    height: 1px;
+}
+
+.texto-baixo {
+    color: #ffffff;
+    display: flex-end;
+}
