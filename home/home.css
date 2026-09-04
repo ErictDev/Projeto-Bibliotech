@@ -1,41 +1,7 @@
 
 
-/* CABEÇALHO */
 
-a {
-    color: var(--branco);
-    text-decoration: none; /* tira o sublinhado do link */
-}
 
-.cabecalho {
-    background-color: var(--azul-escuro);
-
-    display: flex;
-    /* flex-direction: row; */
-
-    /* alinha no sentido do flex */
-    justify-content: space-between;
-
-    /* alinha no sentido contrário do flex */
-    align-items: center;
-
-    padding: 0 120px;
-
-    height: 10vh; /* 10% da visualização vertical do dispositivo */
-}
-
-.navegacao {
-    display: flex;
-    align-items: center;
-
-    gap: 50px;
-}
-
-.navegacao a {
-    text-transform: uppercase;
-    font-size: 1em; /* equivale a 16px */  
-    font-weight: 500;
-}
 
 /* Conteúdo principal */
 
@@ -288,6 +254,8 @@ a {
 
 .texto-cima h4 {
     color: #ffffff;
+    text-align: center;
+  
 }
 
 .texto-cima span {
@@ -295,9 +263,17 @@ a {
     width: 1700px;
     background-color: #ffffff;
     height: 1px;
+    align-items: center;
 }
 
 .texto-baixo {
     color: #ffffff;
     display: flex-end;
+}
+
+.texto-colorido h4 {
+    color: #2ab2ab;
+     display: flex;
+    flex-direction: row;
+    gap: 30px;
 }
