@@ -231,4 +231,13 @@ input[type="checkbox"]:checked::after /*pseudo elemento */
     color: var(--branco);
     font-size: 0.8em;
     font-weight: 700;
-     }
+  }
+
+  .livro .retirada {
+    color: #D34A00;
+  }
+
+   .livro .retirado {
+    color: #00A223;
+  }
+
