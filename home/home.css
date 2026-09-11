@@ -1,8 +1,3 @@
-
-
-
-
-
 /* Conteúdo principal */
 
 /* Primeiro banner */
@@ -57,7 +52,7 @@
 .botao:hover {
     background-color: #2ab2ab;
     color: var(--branco);
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .banner-principal img {
@@ -65,7 +60,7 @@
     width: 35%;
 }
 
-/* Título das seções */
+/* Titulo das seções */
 
 .titulo-secao {
     display: flex;
@@ -81,79 +76,89 @@
 .titulo-secao span {
     display: flex;
     width: 250px;
-    background-color: var(--cor-destaque);
     height: 4px;
-     
+    background-color: var(--cor-destaque);
 }
 
-/* Seção beneficios */
+/* Seção Benefícios */
 
 .beneficios {
     padding: 50px 120px;
+
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: space-between;
+
     gap: 100px;
 }
 
 .beneficios-lista {
     display: grid;
+
     grid-template-columns: repeat(3, 20%);
     gap: 10%;
+
     justify-content: center;
 }
 
 .beneficio {
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
-    padding: 80px 20px 50px;  /* cima -> direita e esquerda -> baixo */
+
+    padding: 80px 20px 50px; /* em cima -> direita e esquerda -> embaixo */
+
     border: 1px solid var(--azul-escuro);
     border-radius: 30px;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25); /* x -> y -> blur -> cor transparente*/
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25); /* x -> y -> blur -> cor com transparência */
 
     text-align: center;
 
-    /*  Cria referencia de posicionamento para o icone, quando o icone for posicionado usa esse card como referencia */
-    /* Sem isso, o circulo poderia usar outro elemento da pagina como referencia e sair passeando pelo layout */
+    /* Cria referência de posicionamento para o ícone, quando o ícone for posicionado, uas esse card como referência. */
+
+    /* sem isso, o círculo poderia usar outro elemento da página como referência e sair passeando pelo layout. */
     position: relative;
 }
 
 .beneficio-icone img {
     width: 50%;
-
 }
 
 .beneficio-icone {
-    position: absolute;
+
     border: 4px solid var(--cor-destaque);
+    background-color: var(--branco);
     border-radius: 50%;
 
     width: 30%;
     height: 30%;
 
-    /* Retira o cione do fluxo normal, com o absolute ele pode ficar por cima do card */
+    /* Retira o ícone do fluxo normal, com o absolute ele pode ficar por cima do card */
+    position: absolute;
 
-    /* Move o circulo para cima, o valor negativo faz ele sair parcialmente do card */
+    /* Move o círculo para cima, o valor negativo faz ele sair parcialmente do card */
     top: -15%;
 
-    /* Coloca o comeco do elemento em 50% da largura do card */
+    /* Coloca o começo do elemento em 50% da largura do card */
     left: 50%;
 
-    /* Ajustamos o posicionamento do elemento, mas a borda esquerda do circulo fica no centro, nâo o circulo inteiro, por isso usamos o transform: translateX(-50%); que move o próprio ciruclo pra esquerda em 50% da largura dele, fazendo com que o circulo fique perfeitamente centralizado*/
+    /* ajustamos o posicionamento do elemento, mas a borda esquerda do círculo fica no centro, não o círculo inteiro */
+    /* por isso usamos transform: translateX(-50%); que move o próprio círculo para a esquerda em 50% da largura dele, fazendo com que o círculo fique perfeitamente centralizado. */
     transform: translateX(-50%);
 
     display: grid;
     place-items: center;
 
-    /* place-items: center; é a mesma coisa que colocar align-itens: center; e justify-itens: center; */
-
+    /* place-items: center; é a mesma coisa que colocar: 
+        align-itens: center e justify-items: center; */
 }
 
 .beneficio h3 {
-    font-size: 1,2em;
+    font-size: 1.2em;
     margin-bottom: 30px;
     text-transform: uppercase;
     width: 90%;
@@ -164,116 +169,405 @@
     width: 80%;
 }
 
+/* Banner meio */
 .banner-meio {
     height: 60vh;
     background-image: url(../imgs/Banner\ centro.svg);
-
     background-size: cover;
+    /* background-repeat: no-repeat; */
+
     display: flex;
     justify-content: flex-end;
+
     padding: 0 120px;
     color: var(--branco);
-    margin-bottom: 60px
 }
 
+/* Acervo */
 
-
-/* Top livros recomendados */
-
-.banner-livros {
-    height: 60vh;
+.acervo {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    justify-content: space-evenly;
-    padding: 0 300px;
-    color: var(--branco);
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 100px;
+
+    padding: 50px 120px;
 }
 
 .livros {
-        display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    gap: 5%;
 }
 
-.banner-livros h3 {
-     font-size: 1em;
-    width: 60%;
-    color: #000000;
-    text-align: center;
-    margin: 20px 0 20px 0;
-    
-}
-
-.banner-livros h4 {
-     font-size: 1em;
-    width: 60%;
-    color: #000000;
-    text-align: center;
-    margin-bottom: 3px
-}
-
-.banner-livros p {
-     font-size: 1em;
-    color: #000000;
-    text-align: center;
-}
-
-
-
-.titulo-livros {
+.livro {
     display: flex;
     flex-direction: column;
+
+    justify-content: space-between;
+    gap: 20px;
+
     align-items: center;
+    text-align: center;
 }
 
-.titulo-livros h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-.titulo-livros span {
-    display: flex;
-    width: 250px;
-    background-color: var(--cor-destaque);
-    height: 4px;
-     margin-bottom: 20px
-}
-
-
-.livros-icones img {
+.livro img {
     height: 300px;
 }
 
-.container {
+.livro h3 {
+    text-transform: uppercase;
+    font-size: 1em;
+    width: 65%;
+}
+
+.livro-texto {
+    font-size: 0.8em;
+}
+
+/* footer - feito pelos alunos */
+
+footer{
     background-color: var(--azul-escuro);
-    width: 2000px;
-    height: 400px;
+    color: var(--branco);
+    padding: 100px 120px 30px;
 }
 
-.texto-cima h4 {
-    color: #ffffff;
-    text-align: center;
-  
+.main {
+    display: flex;
+    justify-content: space-between;
 }
 
-.texto-cima span {
-      display: flex;
-    width: 1700px;
-    background-color: #ffffff;
+.rodape-logos {
+    display: flex;
+    flex-direction: column;
+    gap: 130px;
+}
+
+.rodape-informacoes {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 100px;
+}
+
+.nav-footer  {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-footer p {
+    color: var(--cor-destaque);
+    margin-bottom: 20px;
+
+}
+.nav-footer a {
+    color: var(--branco);
+    margin-bottom: 10px;
+}
+
+.icones {
+    display: flex;
+    gap: 20px;
+}
+
+footer span {
+    display: flex;
+    margin: 50px 0;
+    background-color: white;
     height: 1px;
-    align-items: center;
+    width: 100%;
 }
 
-.texto-baixo {
-    color: #ffffff;
-    display: flex-end;
+.footer-inferior {
+    display: flex;
+    justify-content: space-between;
 }
 
-.texto-colorido h4 {
-    color: #2ab2ab;
-     display: flex;
-    flex-direction: row;
+.footer {
+    display: flex;
+    justify-content: space-between;
     gap: 30px;
+}
+
+.rodape-informacoes p {
+    color: var(--cor-destaque);
+    font-size: 1em;
+    font-weight: 700;
+    width: 100%;
+}
+
+.footer-inferior {
+    display: flex;
+}
+
+/* RESPONSIVIDADE */
+.botao-menu {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    display: none; /* esconde o elemento */
+}
+
+.botao-menu i {
+    font-size: 2em;
+
+    color: var(--branco);
+}
+
+/* RESPONSIVIDADE COM TAMANHOS -> MEDIA QUERY */
+
+@media (max-width: 1024px) {
+
+    html {
+        font-size: 12px;
+    }
+
+    .cabecalho img {
+        width: 60%;
+    }
+
+    .texto-banner h1 {
+        text-align: center;
+    }
+
+    /* BENEFICIOS */
+
+    .beneficios {
+        gap: 50px;
+
+        padding: 30px 0;
+
+        overflow: hidden;
+    }
+
+    .beneficios-lista {
+        grid-template-columns: repeat(3, 30%);
+
+        overflow-x: scroll; /* permite que o objeto role para o lado */
+
+        padding: 50px 20px;
+
+        justify-content: flex-start;
+    }
+
+    .beneficios-lista::-webkit-scrollbar {
+        display: none;
+    }
+
+    .beneficio {
+        padding: 80px 10px 50px;
+    }
+
+    .beneficio h3 {
+        margin-bottom: 25px;
+        width: 60%;
+    }
+
+    .beneficio p {
+        width: 60%;
+    }
+
+    /* BANNER MEIO */
+
+    .banner-meio {
+        background-position: center;
+        padding: 0 30px;
+    }
+
+    .banner-meio .texto-banner {
+        align-items: flex-end;
+    }
+
+    .banner-meio .texto-banner p {
+        text-align: right;
+    }
+
+    /* ACERVO */
+
+    .acervo {
+        padding: 70px 40px;
+        gap: 50px;
+    }
+
+    .livros {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+        
+        gap: 40px 20px;
+    }
+    
+    /* quebra a pagina quando tem flex */
+    /* flex-wrap: wrap; */
+
+    .livro img {
+        max-width: 100%;
+    }
+
+    .livro h3 {
+        font-size: 1.2em;
+    }
+
+    .livro-texto {
+        font-size: 1em;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    
+    .cabecalho {
+        padding: 0 40px;
+
+        position: relative;
+    }
+
+    .botao-menu {
+        /* faz o menu hamburguer aparecer novamente */
+        display: flex;
+    }
+
+    .navegacao {
+        background-color: var(--azul-escuro);
+
+        position: absolute;
+
+        /* distancia de 10vh do topo */
+        top: 10vh;
+
+        /* encosta na esquerda */
+        left: 0;
+
+        width: 100%;
+        height: auto;
+
+        padding: 40px;
+
+        border-radius: 0 0 0 30px;
+
+        flex-direction: column;
+        align-items: flex-end;
+
+        gap: 20px;
+
+        /* só funciona com position, quanto maior o z-index, mais pra cima o elemento fica */
+        z-index: 100;
+
+        display: none;
+    }
+
+    /* Elemento com duas classes nâo tem espaço aqui no css */
+    .navegacao.ativo {
+        display: flex; 
+    }
+
+    /* Banner Principal */
+
+    .banner-principal {
+        height: 50vh;
+
+        padding: 30px 0 10px 0;
+
+        position: relative;
+    }
+
+    .banner-principal .texto-banner {
+        width: 100%;
+        height: 100%;
+
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .banner-principal .texto-banner h1 {
+        font-size: 2em;
+    }
+
+    .banner-principal .texto-banner p {
+        display: none;
+    }
+
+    .banner-principal img {
+        width: 50%;
+
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+
+    .banner-principal .botao {
+        padding: 20px 40px;
+
+        font-size: 1.2em;
+
+        z-index: 2;
+    }
+
+    .beneficio-lista {
+        grid-template-columns: repeat(3, 45%);
+    }
+
+    .beneficio-icone img {
+        width: 45%;
+    }
+
+        /* BANNER MEIO */
+    .banner-meio .texto-banner {
+        display: none;
+    }
+
+    /* FOOTER */
+
+    footer {
+        padding: 50px 40px;
+    }
+
+    .main {
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    .main .rodape-logos {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        gap: 30px;
+    }
+
+      .rodape-logos img {
+        width: 40%;
+    }
+
+     .rodape-informacoes {
+        gap: 30px;
+    }
+
+     .rodape-informacoes {
+        font-size: 1.5em;
+    }
+
+
+    .footer-inferior, .nav-footer a {
+        font-size: 1.2em;
+       
+    }
+
+    .footer span {
+        margin: 50px 0 30px;
+    }
+
+   .footer {
+    flex-direction: column;
+    text-align: right;
+   }
+
+  
+
 }
