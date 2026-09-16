@@ -19,7 +19,7 @@ checkboxes.forEach((caixinha, indice, lista) => {
         else {
                      statusRetirada[indice].classList.remove("retirado")
             statusRetirada[indice].classList.add("Aguardando")
-            statusRetirada[indice].textContent = "Aguardando Retirada"
+            statusRetirada[indice].textContent = "Aguardando retirada"
         }
 
     })
